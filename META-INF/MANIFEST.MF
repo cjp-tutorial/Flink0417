@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.atguigu.chapter02.Flink03_WC_UnBoundedStream
+
