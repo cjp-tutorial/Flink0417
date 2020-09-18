@@ -1,15 +1,13 @@
 package com.atguigu.chapter05;
 
 import com.atguigu.bean.WaterSensor;
-import org.apache.flink.api.common.functions.FilterFunction;
+import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.functions.KeySelector;
-import org.apache.flink.api.java.tuple.Tuple;
+import org.apache.flink.api.java.tuple.Tuple3;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-
-import java.util.Arrays;
 
 /**
  * TODO
@@ -18,7 +16,7 @@ import java.util.Arrays;
  * @version 1.0
  * @date 2020/9/16 15:29
  */
-public class Flink10_Transform_KeyBy {
+public class Flink16_Transform_RollingAgg {
     public static void main(String[] args) throws Exception {
 
         // 0.创建执行环境
@@ -26,21 +24,27 @@ public class Flink10_Transform_KeyBy {
         env.setParallelism(1);
 
         // 1.从文件读取数据
-        DataStreamSource<String> inputDS = env.readTextFile("input/sensor-data.log");
+        DataStreamSource<String> inputDS = env
+//                .readTextFile("input/sensor-data.log");
+                .socketTextStream("localhost",9999 );
 
         // 2.Transform: Map转换成实体对象
         SingleOutputStreamOperator<WaterSensor> sensorDS = inputDS.map(new Flink06_Transform_Map.MyMapFunction());
 
-        // TODO Keyby:分组
-        // 通过 位置索引 或 字段名称 ，返回 Key的类型，无法确定，所以会返回 Tuple，后续使用key的时候，很麻烦
-        // 通过 明确的指定 key 的方式， 获取到的 key就是具体的类型 => 实现 KeySelector 或 lambda
-        // 分组是逻辑上的分组，即 给每个数据打上标签（属于哪个分组），并不是对并行度进行改变
+        // 3.按照 id 分组
+        KeyedStream<Tuple3<String, Long, Integer>, String> sensorKS = sensorDS
+                .map(new MapFunction<WaterSensor, Tuple3<String, Long, Integer>>() {
+                    @Override
+                    public Tuple3<String, Long, Integer> map(WaterSensor value) throws Exception {
+                        return new Tuple3<>(value.getId(), value.getTs(), value.getVc());
+                    }
+                })
+                .keyBy( r -> r.f0);
 
-//        sensorDS.keyBy(0).print();
-//        KeyedStream<WaterSensor, Tuple> sensorKSByFieldName = sensorDS.keyBy("id");
-        KeyedStream<WaterSensor, String> sensorKSByKeySelector = sensorDS.keyBy(new MyKeySelector());
-
-//        KeyedStream<WaterSensor, String> waterSensorStringKeyedStream = sensorDS.keyBy(r -> r.getId());
+        // TODO 滚动聚合算子：来一条，聚合一条，输出一次
+//        sensorKS.sum(2).print("sum");
+        sensorKS.max(2).print("max");
+//        sensorKS.min(2).print("min");
 
         env.execute();
     }
