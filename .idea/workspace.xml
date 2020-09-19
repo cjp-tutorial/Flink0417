@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc164182-9f9d-48af-bfcf-3a970912f29e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="dc164182-9f9d-48af-bfcf-3a970912f29e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,117 +18,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Flink29_Case_AdClickAnalysis.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/chapter05/Flink29_Case_AdClickAnalysis.java">
+      <file leaf-file-name="Flink01_Window_TimeWindow.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/chapter06/Flink01_Window_TimeWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReceiptLog.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input/ReceiptLog.csv">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="OrderEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/bean/OrderEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="155">
+              <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
               <folding>
-                <element signature="e#625#626#0" expanded="true" />
-                <element signature="e#669#670#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-                <element signature="e#775#776#0" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-                <element signature="e#867#868#0" expanded="true" />
-                <element signature="e#898#899#0" expanded="true" />
-                <element signature="e#925#926#0" expanded="true" />
-                <element signature="e#965#966#0" expanded="true" />
-                <element signature="e#997#998#0" expanded="true" />
-                <element signature="e#1031#1032#0" expanded="true" />
-                <element signature="e#1063#1064#0" expanded="true" />
-                <element signature="e#1111#1112#0" expanded="true" />
-                <element signature="e#1153#1154#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TxEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/bean/TxEvent.java">
+      <file leaf-file-name="KeyedStream.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.10.0/flink-streaming-java_2.11-1.10.0-sources.jar!/org/apache/flink/streaming/api/datastream/KeyedStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1078">
-              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-              <folding>
-                <element signature="e#445#446#0" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#512#513#0" expanded="true" />
-                <element signature="e#544#545#0" expanded="true" />
-                <element signature="e#581#582#0" expanded="true" />
-                <element signature="e#614#615#0" expanded="true" />
-                <element signature="e#666#667#0" expanded="true" />
-                <element signature="e#710#711#0" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
-                <element signature="e#776#777#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
-                <element signature="e#866#867#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="611" column="46" selection-start-line="611" selection-start-column="46" selection-end-line="611" selection-end-column="46" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Flink30_Case_OrderTxDetect.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/chapter05/Flink30_Case_OrderTxDetect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-329">
-              <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectedStreams.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.10.0/flink-streaming-java_2.11-1.10.0-sources.jar!/org/apache/flink/streaming/api/datastream/ConnectedStreams.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="327" column="24" selection-start-line="327" selection-start-column="12" selection-end-line="327" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoProcessFunction.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.10.0/flink-streaming-java_2.11-1.10.0-sources.jar!/org/apache/flink/streaming/api/functions/co/CoProcessFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdClickLog.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input/AdClickLog.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" lean-forward="true" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdClickLog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/bean/AdClickLog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderLog.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input/OrderLog.csv">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -203,6 +109,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/atguigu/bean/OrderEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/atguigu/bean/TxEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/atguigu/chapter05/Flink30_Case_OrderTxDetect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/atguigu/chapter06/Flink01_Window_TimeWindow.java" />
       </list>
     </option>
   </component>
@@ -330,7 +237,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="atguigu" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter05" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flink0421" type="b2602c69:ProjectViewProjectNode" />
@@ -340,7 +247,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="atguigu" type="462c0819:PsiDirectoryNode" />
-              <item name="chapter05" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter06" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -383,14 +290,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Flink30_Case_OrderTxDetect">
-    <configuration name="Flink26_Case_UV" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.chapter05.Flink26_Case_UV" />
+  <component name="RunManager" selected="Application.Flink01_Window_TimeWindow">
+    <configuration name="Flink01_Window_TimeWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.chapter06.Flink01_Window_TimeWindow" />
       <module name="flink0421" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.atguigu.chapter05.*" />
+          <option name="PATTERN" value="com.atguigu.chapter06.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -481,19 +388,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.Flink26_Case_UV" />
       <item itemvalue="Application.Flink27_Case_APPMarketingAnalysis" />
       <item itemvalue="Application.Flink28_Case_APPMarketingAnalysisWithoutChannel" />
       <item itemvalue="Application.Flink29_Case_AdClickAnalysis" />
       <item itemvalue="Application.Flink30_Case_OrderTxDetect" />
+      <item itemvalue="Application.Flink01_Window_TimeWindow" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Flink01_Window_TimeWindow" />
         <item itemvalue="Application.Flink30_Case_OrderTxDetect" />
         <item itemvalue="Application.Flink29_Case_AdClickAnalysis" />
         <item itemvalue="Application.Flink28_Case_APPMarketingAnalysisWithoutChannel" />
         <item itemvalue="Application.Flink27_Case_APPMarketingAnalysis" />
-        <item itemvalue="Application.Flink26_Case_UV" />
       </list>
     </recent_temporary>
   </component>
@@ -510,12 +417,12 @@
       <workItem from="1600135490780" duration="9853000" />
       <workItem from="1600216441153" duration="16109000" />
       <workItem from="1600389387460" duration="20841000" />
-      <workItem from="1600475672800" duration="7753000" />
+      <workItem from="1600475672800" duration="9833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54556000" />
+    <option name="totallyTimeSpent" value="56636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -531,7 +438,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.20953101" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23404256" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27659574" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -558,27 +465,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/chapter05/Flink15_Transform_Union.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36">
-          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/chapter05/Flink14_Transform_Connect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/chapter05/Flink16_Transform_RollingAgg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/chapter05/Flink17_Transform_Reduce.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -607,17 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.10.0/flink-streaming-java_2.11-1.10.0-sources.jar!/org/apache/flink/streaming/api/datastream/DataStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="231" column="22" selection-start-line="231" selection-start-column="22" selection-end-line="231" selection-end-column="22" />
-          <folding>
-            <element signature="e#18824#18825#0" expanded="true" />
-            <element signature="e#18884#18885#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/software/Java/jdk1.8.0_51/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -636,13 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.10.0/flink-streaming-java_2.11-1.10.0-sources.jar!/org/apache/flink/streaming/api/datastream/KeyedStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="730" column="41" selection-start-line="730" selection-start-column="41" selection-end-line="730" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -965,8 +833,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/chapter05/Flink30_Case_OrderTxDetect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-329">
-          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        <state relative-caret-position="286">
+          <caret line="25" selection-start-line="25" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.10.0/flink-streaming-java_2.11-1.10.0-sources.jar!/org/apache/flink/streaming/api/datastream/DataStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="844" column="35" lean-forward="true" selection-start-line="844" selection-start-column="35" selection-end-line="844" selection-end-column="35" />
+          <folding>
+            <element signature="e#18824#18825#0" expanded="true" />
+            <element signature="e#18884#18885#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.10.0/flink-streaming-java_2.11-1.10.0-sources.jar!/org/apache/flink/streaming/api/windowing/time/Time.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.10.0/flink-streaming-java_2.11-1.10.0-sources.jar!/org/apache/flink/streaming/api/datastream/WindowedStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="1350" column="41" selection-start-line="1350" selection-start-column="41" selection-end-line="1350" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.10.0/flink-streaming-java_2.11-1.10.0-sources.jar!/org/apache/flink/streaming/api/datastream/KeyedStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="611" column="46" selection-start-line="611" selection-start-column="46" selection-end-line="611" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/chapter06/Flink01_Window_TimeWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
