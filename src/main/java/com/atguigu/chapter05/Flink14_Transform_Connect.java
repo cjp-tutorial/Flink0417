@@ -46,18 +46,19 @@ public class Flink14_Transform_Connect {
         ConnectedStreams<WaterSensor, Integer> sensorNumCS = sensorDS.connect(numDS);
 
         // 调用其他算子
-        SingleOutputStreamOperator<Object> resultDS = sensorNumCS.map(new CoMapFunction<WaterSensor, Integer, Object>() {
+        SingleOutputStreamOperator<Object> resultDS = sensorNumCS.map(
+                new CoMapFunction<WaterSensor, Integer, Object>() {
 
-            @Override
-            public String map1(WaterSensor value) throws Exception {
-                return value.toString();
-            }
+                    @Override
+                    public String map1(WaterSensor value) throws Exception {
+                        return value.toString();
+                    }
 
-            @Override
-            public Integer map2(Integer value) throws Exception {
-                return value + 10;
-            }
-        });
+                    @Override
+                    public Integer map2(Integer value) throws Exception {
+                        return value + 10;
+                    }
+                });
 
         resultDS.print();
 

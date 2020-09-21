@@ -25,7 +25,7 @@ public class Flink30_Case_OrderTxDetect {
     public static void main(String[] args) throws Exception {
         // 0 执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(1);
+        env.setParallelism(2);
 
         // 1.读取数据，转成bean对象
         SingleOutputStreamOperator<OrderEvent> orderDS = env
@@ -61,7 +61,16 @@ public class Flink30_Case_OrderTxDetect {
         // 2.处理数据：实时对账 监控
         // 两条流 connect 起来，通过 txId 做一个匹配，匹配上就是对账成功
         // 对于同一笔订单的交易来说，业务系统 和 交易系统 的数据，哪个先来，是不一定的
-        ConnectedStreams<OrderEvent, TxEvent> orderTxCS = orderDS.connect(txDS);
+        // TODO 一般两条流connect的时候，会做 keyby，为了要匹配的数据到一起
+        // 可以先 keyby再 connect，也可以 先 connect，再 keyby
+        ConnectedStreams<OrderEvent, TxEvent> orderTxCS = (orderDS.keyBy(order -> order.getTxId()))
+                .connect(txDS.keyBy(tx -> tx.getTxId()));
+
+        // 按照 txId进行分组，让相同txId的数据，到一起去
+//        ConnectedStreams<OrderEvent, TxEvent> orderTxKS = orderTxCS.keyBy(
+//                order -> order.getTxId(),
+//                tx -> tx.getTxId());
+
         // 使用process进行处理
         SingleOutputStreamOperator<String> resultDS = orderTxCS.process(
                 new CoProcessFunction<OrderEvent, TxEvent, String>() {
