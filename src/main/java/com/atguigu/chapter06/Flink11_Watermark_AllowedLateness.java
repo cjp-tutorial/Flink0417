@@ -39,7 +39,7 @@ public class Flink11_Watermark_AllowedLateness {
                     }
                 })
                 .assignTimestampsAndWatermarks(
-                        new BoundedOutOfOrdernessTimestampExtractor<WaterSensor>(Time.seconds(0)){
+                        new BoundedOutOfOrdernessTimestampExtractor<WaterSensor>(Time.seconds(3)){
                             @Override
                             public long extractTimestamp(WaterSensor element) {
                                 return element.getTs() * 1000L;
