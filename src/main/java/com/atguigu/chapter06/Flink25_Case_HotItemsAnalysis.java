@@ -22,10 +22,7 @@ import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.util.Collector;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * TODO
@@ -142,7 +139,7 @@ public class Flink25_Case_HotItemsAnalysis {
             // 存到什么时候为止？ => 什么时候是到齐？ => 什么时候排序？
             // => 模拟窗口的触发， 注册一个 窗口结束时间 的定时器
             if (triggerTs.value() == null) {
-                ctx.timerService().registerEventTimeTimer(value.getWindowEnd());
+                ctx.timerService().registerEventTimeTimer(value.getWindowEnd() + 100L);
                 triggerTs.update(value.getWindowEnd());
             }
         }
@@ -168,14 +165,17 @@ public class Flink25_Case_HotItemsAnalysis {
             dataList.clear();
             triggerTs.clear();
 
-            // 排序
-            list.sort(new Comparator<HotItemCountWithWindowEnd>() {
-                @Override
-                public int compare(HotItemCountWithWindowEnd o1, HotItemCountWithWindowEnd o2) {
-                    // 降序 => 后 减 前
-                    return o2.getItemCount().intValue() - o1.getItemCount().intValue();
-                }
-            });
+            // 排序方式1
+//            list.sort(new Comparator<HotItemCountWithWindowEnd>() {
+//                @Override
+//                public int compare(HotItemCountWithWindowEnd o1, HotItemCountWithWindowEnd o2) {
+//                    // 降序 => 后 减 前
+//                    return o2.getItemCount().intValue() - o1.getItemCount().intValue();
+//                }
+//            });
+
+            //排序方式2
+            Collections.sort(list);
 
             StringBuilder resultStr = new StringBuilder();
             resultStr

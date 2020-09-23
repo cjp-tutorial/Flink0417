@@ -7,7 +7,7 @@ package com.atguigu.bean;
  * @version 1.0
  * @date 2020/9/23 11:16
  */
-public class HotItemCountWithWindowEnd {
+public class HotItemCountWithWindowEnd implements Comparable<HotItemCountWithWindowEnd>{
     private Long itemId;
     private Long itemCount;
     private Long windowEnd;
@@ -52,5 +52,11 @@ public class HotItemCountWithWindowEnd {
                 ", itemCount=" + itemCount +
                 ", windowEnd=" + windowEnd +
                 '}';
+    }
+
+    @Override
+    public int compareTo(HotItemCountWithWindowEnd o) {
+        // 后减前 降序
+        return o.getItemCount().intValue() - this.getItemCount().intValue();
     }
 }
