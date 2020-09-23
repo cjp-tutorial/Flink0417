@@ -67,7 +67,7 @@ public class Flink25_Case_HotItemsAnalysis {
         // 2.2 按照 统计维度 分组 ： 商品
         KeyedStream<UserBehavior, Long> userBehaiorKS = userBehaviorFilter.keyBy(data -> data.getItemId());
         // 2.3 开窗：每5分钟输出最近一小时 => 滑动窗口，长度1小时，步长5分钟
-        WindowedStream<UserBehavior, Long, TimeWindow> userBehaviorWS = userBehaiorKS.timeWindow(Time.hours(1), Time.minutes(5));
+        WindowedStream<UserBehavior, Long, TimeWindow> userBehaviorWS = userBehaiorKS.timeWindow(Time.hours(1), Time.seconds(5));
         // TODO 2.4 求和统计 => 每个商品被点击多少次
         // sum? =》需要转成元组（xxx,1），按照 1 求和 =》求完和怎么排序？
         // reduce？ => 可以得到统计结果,输入和输出的类型要一致 => 排序？
@@ -140,7 +140,7 @@ public class Flink25_Case_HotItemsAnalysis {
             // => 模拟窗口的触发， 注册一个 窗口结束时间 的定时器
             if (triggerTs.value() == null) {
                 ctx.timerService().registerEventTimeTimer(value.getWindowEnd() + 100L);
-                triggerTs.update(value.getWindowEnd());
+                triggerTs.update(value.getWindowEnd()+ 100);
             }
         }
 
