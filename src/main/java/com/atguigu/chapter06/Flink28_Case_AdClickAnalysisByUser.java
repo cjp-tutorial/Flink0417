@@ -91,6 +91,7 @@ public class Flink28_Case_AdClickAnalysisByUser {
 
     public static class TopNAdClick extends KeyedProcessFunction<Long, HotAdClickByUser, String> {
 
+        private Integer currentThreshold;
         private Integer threshold;
         private ListState<HotAdClickByUser> datas;
         private ValueState<Long> triggerTS;
@@ -139,8 +140,8 @@ public class Flink28_Case_AdClickAnalysisByUser {
                     .append("---------------------------------------------------\n");
 
             // 加一个判断逻辑： threshold 是否超过 list的大小
-            threshold = threshold > hotAdClicks.size() ? hotAdClicks.size() : threshold;
-            for (int i = 0; i < threshold; i++) {
+            currentThreshold = threshold > hotAdClicks.size() ? hotAdClicks.size() : threshold;
+            for (int i = 0; i < currentThreshold; i++) {
                 resultStr.append(hotAdClicks.get(i) + "\n");
             }
             resultStr.append("--------------------------------------------------\n\n");

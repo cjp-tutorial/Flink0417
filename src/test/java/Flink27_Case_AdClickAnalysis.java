@@ -1,6 +1,6 @@
-package com.atguigu.chapter06;
-
-import com.atguigu.bean.*;
+import com.atguigu.bean.AdClickLog;
+import com.atguigu.bean.HotAdClick;
+import com.atguigu.bean.SimpleAggFunction;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.state.ListState;
 import org.apache.flink.api.common.state.ListStateDescriptor;
@@ -15,16 +15,13 @@ import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction;
 import org.apache.flink.streaming.api.functions.timestamps.AscendingTimestampExtractor;
-import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor;
 import org.apache.flink.streaming.api.functions.windowing.ProcessWindowFunction;
 import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.util.Collector;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -76,12 +73,15 @@ public class Flink27_Case_AdClickAnalysis {
         });
 
         // 2.2 开窗
-        adClickKS
+        SingleOutputStreamOperator<HotAdClick> aggDS = adClickKS
 //                .timeWindow(Time.minutes(10), Time.seconds(5))
                 .timeWindow(Time.hours(1), Time.minutes(5))
                 .aggregate(
                         new SimpleAggFunction<AdClickLog>(),
-                        new AdCountResultWithWindowEnd())
+                        new AdCountResultWithWindowEnd());
+        aggDS.print("agg");
+
+        aggDS
                 .keyBy(data -> data.getWindowEnd())
                 .process(new TopNAdClick(3))
                 .print();
@@ -91,7 +91,6 @@ public class Flink27_Case_AdClickAnalysis {
 
     public static class TopNAdClick extends KeyedProcessFunction<Long, HotAdClick, String> {
 
-        private Integer currentThreshold;
         private Integer threshold;
         private ListState<HotAdClick> datas;
         private ValueState<Long> triggerTS;
@@ -122,8 +121,11 @@ public class Flink27_Case_AdClickAnalysis {
             //
             List<HotAdClick> hotAdClicks = new ArrayList<>();
             for (HotAdClick hotAdClick : datas.get()) {
+                System.out.println("datas状态里的数据= " + hotAdClick);
                 hotAdClicks.add(hotAdClick);
             }
+
+            System.out.println("list里的数据=" + hotAdClicks.toString());
             // 清空状态，过河拆桥
             datas.clear();
             triggerTS.clear();
@@ -140,8 +142,8 @@ public class Flink27_Case_AdClickAnalysis {
                     .append("---------------------------------------------------\n");
 
             // 加一个判断逻辑： threshold 是否超过 list的大小
-            currentThreshold = threshold > hotAdClicks.size() ? hotAdClicks.size() : threshold;
-            for (int i = 0; i < currentThreshold; i++) {
+            threshold = threshold > hotAdClicks.size() ? hotAdClicks.size() : threshold;
+            for (int i = 0; i < threshold; i++) {
                 resultStr.append(hotAdClicks.get(i) + "\n");
             }
             resultStr.append("--------------------------------------------------\n\n");
