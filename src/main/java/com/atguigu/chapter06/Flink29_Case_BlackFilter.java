@@ -127,6 +127,7 @@ public class Flink29_Case_BlackFilter {
         public void processElement(AdClickLog value, Context ctx, Collector<AdClickLog> out) throws Exception {
             // 隔天0点清空状态（点击量）
             // 当前时间、怎么获取今天？ =》 第一条数据来的时候，获取隔天0点的时间
+
             if (triggerTs == 0) {
                 // 获取隔天 0点
                 // 1.获取 今天的0点 => 向下取整 =》 1970年开始到 今天 有 过少 天
