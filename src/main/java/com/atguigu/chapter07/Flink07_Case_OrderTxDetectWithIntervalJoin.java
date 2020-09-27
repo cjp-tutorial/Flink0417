@@ -81,6 +81,8 @@ public class Flink07_Case_OrderTxDetectWithIntervalJoin {
 
         // 2.处理数据：实时对账 监控
         //TODO Interval Join 实现
+        // 必须是 事件时间 语义下
+        // 两条流要是 KeyedStream，也就是要先 keyby
         // 2.1 按照 匹配的数据 分组：交易码
         KeyedStream<OrderEvent, String> orderKS = orderDS.keyBy(order -> order.getTxId());
         KeyedStream<TxEvent, String> txKS = txDS.keyBy(tx -> tx.getTxId());
